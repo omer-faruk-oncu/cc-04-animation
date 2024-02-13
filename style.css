@@ -3,44 +3,94 @@
 }
 
 .container{
-    background-color: black;
+    background-image: url(./img/background.jpeg);
+    background-size: cover;   
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4rem;
+} 
+
+.earth-orbit, .moon-orbit{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.earth{
-    animation: toRight 3s linear infinite alternate; 
+.earth-orbit{
+    animation: orbitAroundSun 10s linear infinite;
 }
 
-.sun{
+.earth img{
+    width: 120px;
+}
+
+.sun img{
+    width: 300px;
+    position: relative;
     z-index: 1;
 }
 
-.moon{ 
-    animation: toLeft 3s linear infinite alternate;  
+.moon img{
+    width: 100px;
 }
 
-@keyframes toRight {
+.moon-orbit{
+    animation: orbitAroundSunMoon 15s linear infinite ;  
+}
+
+@keyframes orbitAroundSun {
     from {
-        transform: translateX(0) scale(1.5); 
+        transform: rotate(0deg) translateX(250px) rotate(0deg); 
     }
     to {
-        transform: translateX(150px) scale(0.5);
+        transform: rotate(360deg) translateX(250px) rotate(-360deg);
     }    
 }
 
-@keyframes toLeft {
+@keyframes orbitAroundSunMoon {
     from{
-        transform: translateX(0) scale(1.5);
+        transform: rotate(0deg) translateX(350px) rotate(0deg);
     }
     to{
-        transform: translateX(-150px) scale(0.5);
+        transform: rotate(360deg) translateX(350px) rotate(-360deg);
     }    
 }
+
+@media (max-width: 800px) {
+    .earth img {
+        width: 60px;
+    }
+    .sun img{
+        width: 120px;
+    }
+    .moon img{
+        width: 50px;
+    }    
+    @keyframes orbitAroundSun {
+        from {
+            transform: rotate(0deg) translateX(120px) rotate(0deg); 
+        }
+        to {
+            transform: rotate(360deg) translateX(120px) rotate(-360deg);
+        }    
+    }
+    
+    @keyframes orbitAroundSunMoon {
+        from{
+            transform: rotate(0deg) translateX(170px) rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg) translateX(170px) rotate(-360deg);
+        }    
+    }
+}
+
 
 
 
