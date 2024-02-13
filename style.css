@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+}
+
+.container{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.earth{
+    animation: toRight 3s linear infinite alternate; 
+}
+
+.sun{
+    z-index: 1;
+}
+
+.moon{ 
+    animation: toLeft 3s linear infinite alternate;  
+}
+
+@keyframes toRight {
+    from {
+        transform: translateX(0) scale(1.5); 
+    }
+    to {
+        transform: translateX(150px) scale(0.5);
+    }    
+}
+
+@keyframes toLeft {
+    from{
+        transform: translateX(0) scale(1.5);
+    }
+    to{
+        transform: translateX(-150px) scale(0.5);
+    }    
+}
+
+
+
+
